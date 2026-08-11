@@ -1,0 +1,14 @@
+{
+  "github": {
+    "app_id": "12345",
+    "private_key_path": "/some/path",
+    "webhook": {
+      "secret": "abcdefghikj",
+      "proxy": "https://smee.io/klmnopqrst"
+    }
+  },
+  "proxy": {
+    "url": "http://proxy-site.tld",
+    "forward": "http://target-container:5000"
+  }
+}

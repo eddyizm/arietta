@@ -1,0 +1,17 @@
+services:
+  arietta-bot:
+    build: .
+    restart: always
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./private-key.pem:/app/private-key.pem:ro
+
+  smee:
+    image: node:lts-alpine
+    restart: always
+    command: >
+      sh -c "npm install -g smee-client &&
+             smee --url ${SMEE_URL} --target http://arietta-bot:5000/webhook"
+    depends_on:
+      - arietta-bot

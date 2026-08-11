@@ -1,0 +1,9 @@
+services:
+  smee:
+    image: node:lts-alpine
+    restart: always
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: >
+      sh -c "npm install -g smee-client &&
+             smee --url ${SMEE_URL} --target http://host.docker.internal:5050/webhook"

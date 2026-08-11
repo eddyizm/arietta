@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "arietta"
+version = "0.0.1"
+authors = [
+  { name="Tom Villegas", email="tvillega@dcc.uchile.cl" },
+]
+    description = "Granulated permissions to trusted contributors on non-organizational (personal) repositories."
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Operating System :: OS Independent",
+]
+keywords = ["forge", "github", "permissions", "contributors"]
+dependencies = [
+    "Flask",
+    "PyGithub",
+    "gunicorn",
+    "requests"
+]
+
+[project.scripts]
+arietta = "arietta.app:main"
+
+[project.urls]
+Homepage = "https://github.com/tvillega/arietta"
+Issues = "https://github.com/tvillega/arietta/issues"
