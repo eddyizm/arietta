@@ -1,3 +1,4 @@
 .idea
 .env
 private-key.pem
+graphify-out/
